@@ -1,26 +1,26 @@
 const people = [
     {
-        id: 1,
+        id: 2001,
         name: 'John Doe',
         department: 'ISD',
-        title: 'Software Developer',']
+        title: 'Software Developer',
     },
     {
-        id: 2,
+        id: 2002,
         name: 'Jane Doe',
-        department: 'ISD',
+        department: 'ARC',
         title: 'Software Developer'
     },
     {
-        id: 3,
+        id: 2003,
         name: 'Jim Doe',
-        department: 'ISD',
+        department: 'Finance',
         title: 'Software Developer'
     },
     {
-        id: 4,
+        id: 2004,
         name: 'Jill Doe',
-        department: 'ISD',
+        department: 'Etc',
         title: 'Software Developer'
     }
 ];

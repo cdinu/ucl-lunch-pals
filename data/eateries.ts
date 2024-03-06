@@ -1,22 +1,32 @@
-const eateries = [
+export type Eatery = {
+    id: number;
+    name: string;
+    tags: string[];
+    image?: string;
+    type: 'Casual' | 'Fast Food' | 'BYO';
+    zone: number;
+};
+
+export const eateries: Eatery[] = [
     {
-        id: 0,
+        id: 1001,
         name: 'Arret A Manger',
         tags: ['Desserts', 'Salads', 'Fast Food'],
-        image: 'https://www.arretamanger.com/wp-content/uploads/2021/07/Arret-a-Manger-Logo-1.png',
+        image: '/pret.png',
         type: 'Casual',
         zone: 0,
     },
     {
-        id: 1,
+        id: 1002,
         name: 'Falafel Things',
         tags: ['Middle Eastern', 'Halal', 'Fast Food'],
-        type: 'Fast Food'
+        type: 'Fast Food',
+        image: '/falafel.png',
         zone: 0,
     },
     {
-        id: 2,
-        name: 'LEON',
+        id: 1003,
+        name: 'NEON',
         tags: ['Healthy', 'Salads', 'Fast Food'],
         zone: 0,
         type: 'Casual',
