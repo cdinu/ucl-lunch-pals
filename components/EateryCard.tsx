@@ -24,9 +24,6 @@ export default function EateryCard({ eatery }: { eatery: Eatery }) {
     : 0;
 
   const howMany = bookingCount ? ` (${bookingCount})` : "";
-
-  console.log("bookings", bookings);
-
   const addMyself = async () => {
     const newBooking = {
       id: Math.floor(10000 * Math.random()),
