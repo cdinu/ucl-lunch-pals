@@ -11,16 +11,12 @@ export default function EateriesList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://hackathon.mesh-dev.ucl.ac.uk/eatery-api-producer/v0.1/booking",
-          {
-            method: "GET",
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch("/bookings/api", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         const data = await response.json();
         setBookings(data);
       } catch (error) {

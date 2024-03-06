@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { CircleUserRound as UserIcon } from "lucide-react";
-import people from "@/data/people";
+import { people } from "@/data/people";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 

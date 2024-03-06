@@ -4,8 +4,8 @@ type Booking = {
     id: string;
     datetime: string;
     eatery_id: number;
-    user_id: number;
+    person_id: number;
 };
 
-export const bookingsAtom = atom<Booking[]>([]);
+export const bookingsAtom = atom<Booking[]|null>(null);
 

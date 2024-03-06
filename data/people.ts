@@ -1,4 +1,11 @@
-const people = [
+export interface Person {
+    id: number;
+    name: string;
+    department: string;
+    title: string;
+}
+
+export const people = [
     {
         id: 2001,
         name: 'John Doe',
@@ -25,4 +32,7 @@ const people = [
     }
 ];
 
-export default people;
+export const peopleDict: { [key: number]: Person } = people.reduce((acc:any, person) => {
+    acc[person.id] = person;
+    return acc;
+}, {});

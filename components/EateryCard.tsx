@@ -43,7 +43,6 @@ export default function EateryCard({ eatery }: { eatery: Eatery }) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        People going
         <BookingList eatery_id={eatery.id} />
       </CardContent>
       <CardFooter className="flex justify-between">
