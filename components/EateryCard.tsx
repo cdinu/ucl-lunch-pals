@@ -31,9 +31,9 @@ export default function EateryCard({ eatery }: { eatery: Eatery }) {
       person_id: 7865,
       created_at: new Date().toISOString(),
     };
-    setBookings((old_ones) =>
-      old_ones ? [...old_ones, newBooking] : [newBooking]
-    );
+    const newBookings = bookings ? [...bookings, newBooking] : [newBooking];
+
+    setBookings(() => newBookings);
     await fetch("/bookings/api", {
       method: "POST",
       headers: {

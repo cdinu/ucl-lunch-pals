@@ -15,9 +15,9 @@ function formatTime(date: Date) {
 
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? "0" + minutes : minutes;
+  const strMinutes = minutes < 10 ? "0" + minutes : "" + minutes;
 
-  const strTime = hours + ":" + minutes + ampm;
+  const strTime = hours + ":" + strMinutes + ampm;
   return strTime;
 }
 

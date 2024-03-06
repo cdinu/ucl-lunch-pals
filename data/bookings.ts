@@ -1,7 +1,7 @@
 import { atom } from 'jotai';
 
 type Booking = {
-    id: string;
+    id: number;
     created_at: string;
     eatery_id: number;
     person_id: number;
