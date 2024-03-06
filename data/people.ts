@@ -7,29 +7,35 @@ export interface Person {
 
 export const people = [
     {
-        id: 2001,
-        name: 'John Doe',
+        id: 7865,
+        name: 'Partha Nath',
         department: 'ISD',
-        title: 'Software Developer',
+        title: 'Senior Analyst Developer',
     },
     {
-        id: 2002,
-        name: 'Jane Doe',
-        department: 'ARC',
-        title: 'Software Developer'
+        id: 7845,
+        name: 'Deborah Okogwu',
+        department: 'ISD',
+        title: 'Agile Delivery Manager'
     },
     {
-        id: 2003,
-        name: 'Jim Doe',
+        id: 34567,
+        name: 'Deeksha Shankar',
         department: 'Finance',
-        title: 'Software Developer'
+        title: 'Senior Analyst Developer '
     },
     {
-        id: 2004,
-        name: 'Jill Doe',
-        department: 'Etc',
-        title: 'Software Developer'
-    }
+        id: 7865,
+        name: 'Cristian Dinu',
+        department: 'ARC',
+        title: 'Research Software Engineer'
+    },
+    {
+        id: 7847,
+        name: 'Jenny Griffiths',
+        department: 'ISD',
+        title: 'Senior Analyst Developer'
+    },
 ];
 
 export const peopleDict: { [key: number]: Person } = people.reduce((acc:any, person) => {

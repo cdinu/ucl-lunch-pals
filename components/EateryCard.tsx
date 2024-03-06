@@ -13,9 +13,42 @@ import {
 } from "./ui/card";
 import { Eatery } from "@/data/eateries";
 import { SandwichIcon } from "lucide-react";
+import { useAtom } from "jotai";
+import { bookingsAtom } from "@/data/bookings";
 
 export default function EateryCard({ eatery }: { eatery: Eatery }) {
   const { name, image, tags, type: eateryType } = eatery;
+  const [bookings, setBookings] = useAtom(bookingsAtom);
+  const bookingCount = bookings?.length
+    ? bookings.filter((booking) => booking.eatery_id === eatery.id).length
+    : 0;
+
+  const howMany = bookingCount ? ` (${bookingCount})` : "";
+
+  console.log("bookings", bookings);
+
+  const addMyself = async () => {
+    const newBooking = {
+      id: Math.floor(10000 * Math.random()),
+      eatery_id: eatery.id,
+      person_id: 7865,
+      created_at: new Date().toISOString(),
+    };
+    setBookings((old_ones) =>
+      old_ones ? [...old_ones, newBooking] : [newBooking]
+    );
+    await fetch("/bookings/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        eatery_id: eatery.id,
+        person_id: 7865,
+        created_at: new Date().toISOString(),
+      }),
+    });
+  };
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -27,7 +60,7 @@ export default function EateryCard({ eatery }: { eatery: Eatery }) {
               <SandwichIcon />
             </AvatarFallback>
           </Avatar>
-          {name}
+          {name} {howMany}
         </CardTitle>
         <CardDescription>
           <div className="flex flex-wrap gap-2">
@@ -46,7 +79,7 @@ export default function EateryCard({ eatery }: { eatery: Eatery }) {
         <BookingList eatery_id={eatery.id} />
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button>Add myself</Button>
+        <Button onClick={addMyself}>Add myself</Button>
       </CardFooter>
     </Card>
   );

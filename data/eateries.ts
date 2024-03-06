@@ -9,7 +9,7 @@ export type Eatery = {
 
 export const eateries: Eatery[] = [
     {
-        id: 1001,
+        id: 4001,
         name: 'Arret A Manger',
         tags: ['Desserts', 'Salads', 'Fast Food'],
         image: '/pret.png',
@@ -17,7 +17,7 @@ export const eateries: Eatery[] = [
         zone: 0,
     },
     {
-        id: 1002,
+        id: 4002,
         name: 'Falafel Things',
         tags: ['Middle Eastern', 'Halal', 'Fast Food'],
         type: 'Fast Food',
@@ -25,7 +25,7 @@ export const eateries: Eatery[] = [
         zone: 0,
     },
     {
-        id: 1003,
+        id: 4003,
         name: 'NEON',
         tags: ['Healthy', 'Salads', 'Fast Food'],
         zone: 0,

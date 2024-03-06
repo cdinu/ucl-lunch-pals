@@ -2,7 +2,7 @@ import { atom } from 'jotai';
 
 type Booking = {
     id: string;
-    datetime: string;
+    created_at: string;
     eatery_id: number;
     person_id: number;
 };
